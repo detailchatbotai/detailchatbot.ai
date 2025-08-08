@@ -5,29 +5,29 @@ import { motion } from 'framer-motion'
 const steps = [
   {
     step: '01',
-    title: 'Tell Us About Your Business',
-    description: 'Answer a few quick questions about your services, pricing, and common customer questions.',
+    title: 'Setup Your Detailing Shop',
+    description: 'Tell us about your detailing services, pricing packages, and location details.',
     icon: '🏢',
     color: 'from-primary-500 to-primary-600'
   },
   {
     step: '02',
-    title: 'AI Learns Your Business',
-    description: 'Our AI processes your information and creates a smart chatbot trained on your specific services and expertise.',
+    title: 'AI Learns Auto Detailing',
+    description: 'Our AI gets trained on auto detailing knowledge and your specific services to answer customer questions expertly.',
     icon: '🤖',
     color: 'from-primary-600 to-accent-500'
   },
   {
     step: '03',
-    title: 'Customize & Deploy',
-    description: 'Personalize the chatbot appearance and embed it on your website with a simple code snippet.',
+    title: 'Add to Your Website',
+    description: 'Customize your chatbot colors and branding, then embed it on your detailing website with one line of code.',
     icon: '🎨',
     color: 'from-accent-500 to-accent-600'
   },
   {
     step: '04',
-    title: 'Start Converting Visitors',
-    description: 'Watch as your chatbot engages visitors, answers questions, and converts them into paying customers 24/7.',
+    title: 'Book More Appointments',
+    description: 'Your AI assistant handles inquiries, quotes prices, and schedules detailing appointments while you focus on cars.',
     icon: '📈',
     color: 'from-accent-600 to-primary-700'
   }
@@ -60,14 +60,14 @@ export function HowItWorks() {
             <span className="text-sm font-semibold">⚡ Quick Setup Process</span>
           </motion.div>
           <h2 className="text-5xl font-bold text-white mb-6">
-            Get Your Chatbot Live in
+            Get Your DetailBot Live in
             <span className="block bg-gradient-to-r from-blue-200 to-cyan-200 bg-clip-text text-transparent">
               Under 5 Minutes
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             No technical expertise required. Follow these simple steps to start 
-            converting website visitors into customers.
+            converting website visitors into detailing appointments.
           </p>
         </motion.div>
 
@@ -136,10 +136,10 @@ export function HowItWorks() {
         >
           <div className="bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl p-1">
             <button className="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg w-full hover:bg-slate-800 transition-colors duration-300">
-              🚀 Start Building Your Chatbot Now
+              🚀 Get Your DetailBot Now
             </button>
           </div>
-          <p className="text-gray-300 mt-4">Free trial • No credit card required • Setup in 5 minutes</p>
+          <p className="text-gray-300 mt-4">Beta Access • Free to try • Perfect for detailing shops</p>
         </motion.div>
       </div>
     </section>

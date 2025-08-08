@@ -7,30 +7,30 @@ const testimonials = [
     name: 'Mike Rodriguez',
     business: 'Elite Auto Detailing',
     location: 'Phoenix, AZ',
-    quote: 'Our chatbot increased booking requests by 300% in the first month. It handles all the basic questions so we can focus on delivering amazing service.',
+    quote: 'DetailChatbot.ai is amazing! Even in beta, it\'s already handling customer inquiries better than our old system. Can\'t wait for the full release.',
     avatar: 'MR',
-    metric: '+300%',
-    metricLabel: 'Booking Increase',
+    metric: 'BETA',
+    metricLabel: 'Early User',
     gradient: 'from-primary-500 to-primary-600'
   },
   {
-    name: 'Sarah Chen',
-    business: 'AC Masters HVAC',
+    name: 'Sarah Johnson',
+    business: 'Premium Auto Spa',
     location: 'Dallas, TX', 
-    quote: 'The AI knows our services better than some of our competitors! It qualifies leads perfectly and only sends us serious customers.',
-    avatar: 'SC',
-    metric: '95%',
-    metricLabel: 'Lead Quality',
+    quote: 'Being part of the DetailChatbot.ai beta has been incredible. The AI understands ceramic coatings, paint correction - it knows our industry!',
+    avatar: 'SJ',
+    metric: 'BETA',
+    metricLabel: 'Beta Tester',
     gradient: 'from-accent-500 to-accent-600'
   },
   {
-    name: 'Tommy Williams',
-    business: 'Rapid Rooter Plumbing',
+    name: 'Carlos Martinez',
+    business: 'Shine Masters Detailing',
     location: 'Miami, FL',
-    quote: 'Game changer for our emergency calls. The chatbot captures urgent requests even when we\'re on other jobs. Revenue up 45% this quarter.',
-    avatar: 'TW',
-    metric: '+45%',
-    metricLabel: 'Revenue Growth',
+    quote: 'As a beta user, I\'m impressed by how well it answers detailing questions. My customers love the instant responses about services and pricing.',
+    avatar: 'CM',
+    metric: 'BETA',
+    metricLabel: 'Preview User',
     gradient: 'from-primary-600 to-accent-700'
   }
 ]
@@ -56,14 +56,14 @@ export function Testimonials() {
             <span className="text-sm font-semibold">💬 Success Stories</span>
           </motion.div>
           <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-6">
-            Real Results from
+            Early Feedback from
             <span className="block bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-              Real Businesses
+              Beta Users
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join hundreds of service businesses already using our chatbots to 
-            grow their customer base and boost revenue.
+            Hear from auto detailing shops already testing DetailChatbot.ai 
+            and see why they're excited about the full launch.
           </p>
         </motion.div>
 
@@ -160,20 +160,20 @@ export function Testimonials() {
               ))}
             </div>
             <h3 className="text-3xl font-bold text-white mb-4">
-              Rated 4.9/5 stars by 500+ business owners
+              Join the Beta Program Today
             </h3>
             <div className="grid grid-cols-3 gap-8 mt-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">500+</div>
-                <div className="text-white/80">Happy Customers</div>
+                <div className="text-4xl font-bold text-white mb-2">BETA</div>
+                <div className="text-white/80">Early Access</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">250%</div>
-                <div className="text-white/80">Avg. Lead Increase</div>
+                <div className="text-4xl font-bold text-white mb-2">FREE</div>
+                <div className="text-white/80">Beta Testing</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">24/7</div>
-                <div className="text-white/80">AI Support</div>
+                <div className="text-4xl font-bold text-white mb-2">100%</div>
+                <div className="text-white/80">Auto Detailing</div>
               </div>
             </div>
           </div>

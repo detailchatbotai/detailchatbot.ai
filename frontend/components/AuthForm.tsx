@@ -81,11 +81,13 @@ export function AuthForm({ type }: AuthFormProps) {
             className="flex items-center justify-center mb-6"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-accent-600 rounded-xl flex items-center justify-center mr-3">
-              <span className="text-white font-bold text-2xl">🤖</span>
-            </div>
+            <img 
+              src="/detailchatbot.png" 
+              alt="DetailChatbot.ai" 
+              className="w-12 h-12 mr-3 rounded-full"
+            />
             <span className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-              Chatbot.ai
+              DetailChatbot.ai
             </span>
           </motion.div>
           <h2 className="text-2xl font-bold text-gray-900">
@@ -93,8 +95,8 @@ export function AuthForm({ type }: AuthFormProps) {
           </h2>
           <p className="mt-2 text-gray-600">
             {isLogin 
-              ? 'Sign in to your account to continue' 
-              : 'Start building amazing chatbots for your business'
+              ? 'Sign in to your DetailChatbot.ai account' 
+              : 'Join the beta program for auto detailing shops'
             }
           </p>
         </div>

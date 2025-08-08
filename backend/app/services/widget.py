@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from typing import Optional
 
 from app.models.chat_config import ChatWidgetConfig
+from app.core.config import settings
 
 
 def get_or_create_widget_config(db: Session, shop_id: UUID) -> ChatWidgetConfig:
@@ -38,7 +39,7 @@ def generate_embed_script(db: Session, shop_id: UUID) -> str:
     showBranding: {str(widget_config.show_branding).lower()}
   }};
 </script>
-<script src="https://cdn.chatbot.ai/widget/v1/widget.js" async></script>
+<script src="{settings.backend_url}/api/v1/widget/widget.js" async></script>
 <!-- End Chatbot.ai Widget -->'''
     
     return script

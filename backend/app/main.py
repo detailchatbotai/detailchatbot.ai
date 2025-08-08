@@ -17,8 +17,14 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://chatbot.ai",
-        "https://www.chatbot.ai"
+        "http://localhost:63343",  # IDE server
+        "http://localhost:8080",   # Common dev server
+        "http://localhost:5173",   # Vite dev server
+        "file://",                 # Local file access
+        "https://detailchatbot.ai",
+        "https://www.detailchatbot.ai",
+        "https://*.railway.app",   # Railway domains
+        "*"  # Allow all origins for widget embedding
     ],
     allow_credentials=True,
     allow_methods=["*"],

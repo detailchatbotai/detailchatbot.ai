@@ -25,16 +25,18 @@ export function Footer() {
               className="flex items-center mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-accent-600 rounded-xl flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-xl">🤖</span>
-              </div>
+              <img 
+                src="/detailchatbot.png" 
+                alt="DetailChatbot.ai" 
+                className="w-10 h-10 mr-3 rounded-full"
+              />
               <span className="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                Chatbot.ai
+                DetailChatbot.ai
               </span>
             </motion.div>
             <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-              AI-powered chatbots that convert website visitors into customers for service businesses. 
-              Transform your business growth today.
+              AI-powered chatbot designed specifically for auto detailing shops. 
+              Convert website visitors into appointments 24/7.
             </p>
             <div className="flex space-x-4">
               {[
@@ -60,15 +62,15 @@ export function Footer() {
           {[
             {
               title: 'Product',
-              links: ['Features', 'Pricing', 'Integrations', 'API Docs', 'Changelog']
+              links: ['Features', 'Beta Access', 'Auto Detailing AI', 'Booking System', 'Coming Soon']
             },
             {
               title: 'Company',
-              links: ['About', 'Blog', 'Careers', 'Contact', 'Press Kit']
+              links: ['About', 'Beta Program', 'Auto Detailing Focus', 'Contact', 'Roadmap']
             },
             {
               title: 'Support',
-              links: ['Help Center', 'Community', 'Status', 'Security', 'Privacy']
+              links: ['Beta Support', 'Setup Guide', 'FAQ', 'Security', 'Privacy']
             }
           ].map((section, sectionIndex) => (
             <motion.div
@@ -111,10 +113,10 @@ export function Footer() {
         >
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Stay Updated with Chatbot.ai
+              Join the DetailChatbot.ai Beta
             </h3>
             <p className="text-gray-300 mb-6">
-              Get the latest AI chatbot tips, feature updates, and success stories delivered to your inbox.
+              Be the first to know when we launch new features for auto detailing businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
@@ -142,7 +144,7 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Chatbot.ai. All rights reserved. Made with ❤️ for service businesses.
+              © 2024 DetailChatbot.ai. All rights reserved. Made with ❤️ for auto detailing shops.
             </p>
             <div className="flex space-x-6">
               {['Terms of Service', 'Privacy Policy', 'Cookie Policy'].map((link, index) => (

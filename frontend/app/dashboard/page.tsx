@@ -66,7 +66,7 @@ export default function DashboardPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Create Your Shop
+                Create Detailing Shop
               </motion.button>
             </Link>
           </motion.div>

@@ -10,6 +10,10 @@ def get_shop_by_owner(db: Session, owner_id: UUID) -> Optional[Shop]:
     return db.query(Shop).filter(Shop.owner_id == owner_id).first()
 
 
+def get_shop_by_id(db: Session, shop_id: UUID) -> Optional[Shop]:
+    return db.query(Shop).filter(Shop.id == shop_id).first()
+
+
 def get_chat_config_by_shop(db: Session, shop_id: UUID) -> Optional[ChatConfig]:
     return db.query(ChatConfig).filter(ChatConfig.shop_id == shop_id).first()
 

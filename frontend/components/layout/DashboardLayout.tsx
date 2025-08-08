@@ -91,11 +91,13 @@ export function DashboardLayout({ children, title, subtitle, breadcrumbs }: Dash
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-white font-bold text-lg">🤖</span>
-                </div>
+                <img 
+                  src="/detailchatbot.png" 
+                  alt="DetailChatbot.ai" 
+                  className="w-8 h-8 mr-3 rounded-full"
+                />
                 <span className="text-xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-                  Chatbot.ai
+                  DetailChatbot.ai
                 </span>
               </motion.div>
             </Link>

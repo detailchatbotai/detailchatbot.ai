@@ -1,6 +1,8 @@
 from typing import Dict
 from fastapi import APIRouter, Depends, HTTPException, status, Query
+from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
+import os
 
 from app.schemas.widget import WidgetEmbedResponse
 from app.services.widget import generate_embed_script
@@ -35,3 +37,26 @@ async def get_widget_embed(
     embed_script = generate_embed_script(db, shop.id)
     
     return WidgetEmbedResponse(embed_script=embed_script)
+
+
+@router.get("/widget.js")
+async def serve_widget_js():
+    """
+    Serve the widget JavaScript file for embedding on customer websites.
+    
+    This endpoint serves the static widget.js file that creates the chat UI
+    and connects to the public chat API.
+    """
+    widget_path = os.path.join("app", "static", "widget", "v1", "widget.js")
+    
+    if not os.path.exists(widget_path):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Widget file not found"
+        )
+    
+    return FileResponse(
+        widget_path,
+        media_type="application/javascript",
+        headers={"Cache-Control": "public, max-age=3600"}
+    )

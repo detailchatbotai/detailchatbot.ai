@@ -8,7 +8,7 @@ import { ShopForm } from '../../../components/forms/ShopForm'
 import { shopAPI, handleAPIError } from '../../../lib/api'
 
 export default function EditShopPage() {
-  const [shopData, setShopData] = useState(null)
+  const [shopData, setShopData] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
 

@@ -33,15 +33,15 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-white text-sm font-medium">🚀 #1 AI Chatbot Platform</span>
+              <span className="text-white text-sm font-medium">🚀 Beta Launch - DetailChatbot.ai</span>
             </motion.div>
 
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Transform Your
+              Boost Your
               <span className="block bg-gradient-to-r from-blue-100 to-cyan-200 bg-clip-text text-transparent">
-                Business Growth
+                Auto Detailing
               </span>
-              with AI Chatbots
+              Business with AI
             </h1>
             
             <motion.p 
@@ -50,8 +50,8 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Convert 3x more website visitors into customers with intelligent AI chatbots designed 
-              specifically for service businesses. No coding required.
+              Convert more leads into bookings with an intelligent AI chatbot designed 
+              specifically for auto detailing shops. Handle inquiries 24/7 and never miss a customer again.
             </motion.p>
 
             <motion.div
@@ -64,7 +64,7 @@ export function Hero() {
                 onClick={scrollToHowItWorks}
                 className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
               >
-                Start Free Trial →
+                Join Beta Now →
               </button>
               <button className="border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                 Watch Demo
@@ -78,16 +78,16 @@ export function Hero() {
               transition={{ delay: 0.8 }}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">500+</div>
-                <div className="text-white/70 text-sm">Happy Businesses</div>
+                <div className="text-2xl font-bold text-white">Beta</div>
+                <div className="text-white/70 text-sm">Early Access</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white">24/7</div>
-                <div className="text-white/70 text-sm">AI Support</div>
+                <div className="text-white/70 text-sm">Auto Response</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">300%</div>
-                <div className="text-white/70 text-sm">Lead Increase</div>
+                <div className="text-2xl font-bold text-white">100%</div>
+                <div className="text-white/70 text-sm">Auto Detailing</div>
               </div>
             </motion.div>
           </motion.div>

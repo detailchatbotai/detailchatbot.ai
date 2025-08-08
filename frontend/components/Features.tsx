@@ -9,8 +9,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: 'Lightning Fast Setup',
-    description: 'Get your chatbot live in under 5 minutes. No coding required - just answer a few questions about your business.',
+    title: 'Quick Auto Detailing Setup',
+    description: 'Get your detailing chatbot live in minutes. Pre-loaded with auto detailing knowledge and pricing templates.',
     color: 'bg-primary-500'
   },
   {
@@ -19,8 +19,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: 'Smart AI Learning',
-    description: 'AI learns your business services, pricing, and FAQ to provide accurate responses that convert visitors into customers.',
+    title: 'Auto Detailing Expert AI',
+    description: 'AI trained specifically on auto detailing services, pricing, and common customer questions to boost bookings.',
     color: 'bg-primary-600'
   },
   {
@@ -29,8 +29,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    title: 'Lead Generation',
-    description: 'Capture contact info seamlessly during conversations and sync with your CRM or email marketing tools.',
+    title: 'Instant Booking & Leads',
+    description: 'Capture customer details, vehicle info, and preferred appointment times directly through chat conversations.',
     color: 'bg-accent-500'
   },
   {
@@ -39,8 +39,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: '24/7 Availability',
-    description: 'Never miss a potential customer again. Your chatbot works around the clock to answer questions and book appointments.',
+    title: 'Never Miss a Customer',
+    description: 'Available 24/7 to answer pricing questions, explain services, and schedule appointments even when you\'re busy detailing.',
     color: 'bg-accent-600'
   },
   {
@@ -50,8 +50,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: 'Custom Integration',
-    description: 'Seamlessly integrate with your existing tools and workflows. Works with CRM, scheduling, and payment systems.',
+    title: 'Easy Integration',
+    description: 'Works with popular scheduling tools, payment processors, and auto detailing business management software.',
     color: 'bg-primary-700'
   },
   {
@@ -60,8 +60,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    title: 'Analytics Dashboard',
-    description: 'Track performance, leads, and customer satisfaction in real-time with comprehensive analytics and insights.',
+    title: 'Business Insights',
+    description: 'Track chat performance, popular services, peak inquiry times, and conversion rates to optimize your business.',
     color: 'bg-accent-700'
   }
 ]
@@ -87,14 +87,14 @@ export function Features() {
             <span className="text-sm font-semibold">✨ Powerful Features</span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything You Need to
+            Built Specifically for
             <span className="block bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
-              Grow Your Business
+              Auto Detailing Shops
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our AI chatbots are specifically designed for service businesses, 
-            with features that actually drive results.
+            DetailChatbot.ai understands your business - from ceramic coatings to paint correction, 
+            our AI knows what your customers need.
           </p>
         </motion.div>
 
@@ -141,17 +141,17 @@ export function Features() {
         >
           <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 max-w-4xl mx-auto text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Transform Your Business?
+              Ready to Never Miss Another Customer?
             </h3>
             <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
-              Join 500+ businesses already using our AI chatbots to increase leads and sales by an average of 250%.
+              Join our beta program and be among the first detailing shops to benefit from AI-powered customer engagement.
             </p>
             <motion.button
               className="bg-white text-primary-600 px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Start Free Trial
+              Join Beta Now
             </motion.button>
           </div>
         </motion.div>
