@@ -7,8 +7,11 @@ from sqlalchemy import pool
 
 from alembic import context
 
-# Add the parent directory to sys.path so we can import our app
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+# Add the current directory and parent to sys.path so we can import our app
+current_dir = os.path.dirname(os.path.abspath(__file__))
+backend_dir = os.path.dirname(current_dir)
+sys.path.insert(0, backend_dir)
+sys.path.insert(0, os.path.dirname(backend_dir))
 
 from app.db import Base
 from app.core.config import settings
