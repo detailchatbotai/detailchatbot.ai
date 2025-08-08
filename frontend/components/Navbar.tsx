@@ -4,11 +4,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from './ui/Button'
-import { ComingSoonModal } from './ComingSoonModal'
 
 export function Navbar() {
-  const [modalOpen, setModalOpen] = useState(false)
-  const [modalType, setModalType] = useState<'login' | 'register'>('login')
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -19,12 +16,6 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const openModal = (type: 'login' | 'register') => {
-    setModalType(type)
-    setModalOpen(true)
-    setMobileMenuOpen(false) // Close mobile menu when opening modal
-  }
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false) // Close mobile menu when clicking a link
@@ -87,27 +78,29 @@ export function Navbar() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <motion.button
-                onClick={() => openModal('login')}
-                className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 ${
-                  scrolled
-                    ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Sign In
-              </motion.button>
+              <Link href="/auth/login">
+                <motion.button
+                  className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 ${
+                    scrolled
+                      ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
+                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Sign In
+                </motion.button>
+              </Link>
               
-              <motion.button
-                onClick={() => openModal('register')}
-                className="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white px-6 py-2 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Started
-              </motion.button>
+              <Link href="/auth/register">
+                <motion.button
+                  className="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white px-6 py-2 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Started
+                </motion.button>
+              </Link>
             </motion.div>
 
             {/* Mobile Menu Button */}
@@ -167,41 +160,37 @@ export function Navbar() {
                 
                 {/* Mobile Auth Buttons */}
                 <div className="pt-4 space-y-3">
-                  <motion.button
-                    onClick={() => openModal('login')}
-                    className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
-                      scrolled
-                        ? 'text-gray-700 bg-gray-100 hover:bg-gray-200'
-                        : 'text-white bg-white/10 hover:bg-white/20'
-                    }`}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    Sign In
-                  </motion.button>
+                  <Link href="/auth/login" onClick={handleLinkClick}>
+                    <motion.button
+                      className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
+                        scrolled
+                          ? 'text-gray-700 bg-gray-100 hover:bg-gray-200'
+                          : 'text-white bg-white/10 hover:bg-white/20'
+                      }`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      Sign In
+                    </motion.button>
+                  </Link>
                   
-                  <motion.button
-                    onClick={() => openModal('register')}
-                    className="w-full bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    Get Started
-                  </motion.button>
+                  <Link href="/auth/register" onClick={handleLinkClick}>
+                    <motion.button
+                      className="w-full bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      Get Started
+                    </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.nav>
-
-      <ComingSoonModal 
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        type={modalType}
-      />
     </>
   )
 }

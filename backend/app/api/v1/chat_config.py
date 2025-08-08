@@ -17,6 +17,7 @@ from app.services.chat_config import (
     update_chat_config
 )
 from app.core.supabase_auth import get_current_user
+from app.core.subscription_auth import require_active_subscription
 from app.db import get_db
 
 router = APIRouter(prefix="/chat-config", tags=["chat-config"])
@@ -25,6 +26,7 @@ router = APIRouter(prefix="/chat-config", tags=["chat-config"])
 @router.get("/", response_model=ChatConfigResponse)
 async def get_chat_config(
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     shop = get_shop_by_owner(db, user["id"])
@@ -48,6 +50,7 @@ async def get_chat_config(
 async def create_new_chat_config(
     config_data: ChatConfigCreate,
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     shop = get_shop_by_owner(db, user["id"])
@@ -72,6 +75,7 @@ async def create_new_chat_config(
 async def update_existing_chat_config(
     config_data: ChatConfigUpdate,
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     shop = get_shop_by_owner(db, user["id"])
@@ -96,6 +100,7 @@ async def update_existing_chat_config(
 @router.get("/widget-config", response_model=ChatWidgetConfigRead)
 async def get_widget_config(
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     from app.models.chat_config import ChatWidgetConfig
@@ -121,6 +126,7 @@ async def get_widget_config(
 async def create_widget_config(
     config_data: ChatWidgetConfigCreate,
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     from app.models.chat_config import ChatWidgetConfig
@@ -153,6 +159,7 @@ async def create_widget_config(
 async def update_widget_config(
     config_data: ChatWidgetConfigUpdate,
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     from app.models.chat_config import ChatWidgetConfig

@@ -6,6 +6,7 @@ from app.schemas.widget import WidgetEmbedResponse
 from app.services.widget import generate_embed_script
 from app.services.service import get_shop_by_owner
 from app.core.supabase_auth import get_current_user
+from app.core.subscription_auth import require_active_subscription
 from app.db import get_db
 
 router = APIRouter(prefix="/widget", tags=["widget"])
@@ -15,6 +16,7 @@ router = APIRouter(prefix="/widget", tags=["widget"])
 async def get_widget_embed(
     format: str = Query(default="json", regex="^(json|html)$"),
     user: Dict[str, str] = Depends(get_current_user),
+    subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
     """

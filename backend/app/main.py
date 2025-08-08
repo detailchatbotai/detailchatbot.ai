@@ -8,6 +8,7 @@ from app.api.v1.faqs import router as faqs_router
 from app.api.v1.chat_config import router as chat_config_router
 from app.api.v1.widget import router as widget_router
 from app.api.v1.chat import router as chat_router
+from app.api.v1.users import router as users_router
 
 app = FastAPI(title="Chatbot.ai API", version="1.0.0")
 
@@ -31,6 +32,7 @@ app.include_router(faqs_router, prefix="/api/v1")
 app.include_router(chat_config_router, prefix="/api/v1")
 app.include_router(widget_router, prefix="/api/v1")
 app.include_router(chat_router, prefix="/api/v1")
+app.include_router(users_router, prefix="/api/v1")
 
 
 @app.get("/health")
