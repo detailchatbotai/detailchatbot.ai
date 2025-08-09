@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     supabase_service_role_key: str
     database_url: str
     openai_api_key: str
-    backend_url: str = "http://localhost:8000"
+    backend_url: str
 
     class Config:
         env_file = ".env"
