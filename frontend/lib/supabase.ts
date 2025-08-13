@@ -18,7 +18,14 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
 // Auth helper functions
 export const auth = {
   signUp: async (email: string, password: string) => {
-    return await supabase.auth.signUp({ email, password })
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    return await supabase.auth.signUp({ 
+      email, 
+      password,
+      options: {
+        emailRedirectTo: `${baseUrl}/auth/callback`
+      }
+    })
   },
   
   signIn: async (email: string, password: string) => {

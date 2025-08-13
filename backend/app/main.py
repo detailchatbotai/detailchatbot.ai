@@ -23,6 +23,7 @@ app.add_middleware(
         "file://",                 # Local file access
         "https://detailchatbot.ai",
         "https://www.detailchatbot.ai",
+        "https://detailchatbot-ai.vercel.app",  # Vercel deployment
         "https://*.railway.app",   # Railway domains
         "*"  # Allow all origins for widget embedding
     ],

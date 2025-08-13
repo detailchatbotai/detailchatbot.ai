@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
 import { supabase } from '../lib/supabase'
@@ -58,7 +59,7 @@ export function AuthForm({ type }: AuthFormProps) {
         router.push('/dashboard')
       } else {
         toast.success('Account created! Check your email to verify your account.')
-        router.push('/login')
+        router.push('/auth/login')
       }
     } catch (error: any) {
       toast.error(error.message || 'Something went wrong')
@@ -81,10 +82,13 @@ export function AuthForm({ type }: AuthFormProps) {
             className="flex items-center justify-center mb-6"
             whileHover={{ scale: 1.05 }}
           >
-            <img 
+            <Image
               src="/detailchatbot.png" 
               alt="DetailChatbot.ai" 
+              width={48}
+              height={48}
               className="w-12 h-12 mr-3 rounded-full"
+              priority
             />
             <span className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
               DetailChatbot.ai
@@ -165,7 +169,7 @@ export function AuthForm({ type }: AuthFormProps) {
               {isLogin ? "Don't have an account?" : 'Already have an account?'}
               {' '}
               <Link 
-                href={isLogin ? '/register' : '/login'} 
+                href={isLogin ? '/auth/register' : '/auth/login'} 
                 className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
               >
                 {isLogin ? 'Sign up' : 'Sign in'}
