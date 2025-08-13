@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from './ui/Button'
+import Link from 'next/link'
 
 export function Hero() {
   const scrollToHowItWorks = () => {
@@ -12,20 +13,20 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 overflow-hidden">
-      {/* Animated background elements */}
+      {/* Optimized background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-300/20 rounded-full blur-3xl animate-bounce-slow"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-success-300/10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-2xl will-change-transform"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-300/10 rounded-full blur-2xl will-change-transform"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-success-300/5 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-20 flex items-center min-h-screen">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <motion.div
             className="text-center lg:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.div
               className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6"
@@ -60,12 +61,13 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button 
-                onClick={scrollToHowItWorks}
-                className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
-              >
-                Join Beta Now →
-              </button>
+              <Link href="/auth/register">
+                <button 
+                  className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
+                >
+                  Join Beta Now →
+                </button>
+              </Link>
               <button className="border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                 Watch Demo
               </button>
@@ -94,9 +96,9 @@ export function Hero() {
 
           <motion.div
             className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
               <div className="bg-gradient-to-br from-white to-gray-100 rounded-2xl p-6 shadow-2xl">

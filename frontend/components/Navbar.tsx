@@ -11,10 +11,17 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -43,10 +50,13 @@ export function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <img 
+                <Image
                   src="/detailchatbot.png" 
                   alt="DetailChatbot.ai" 
+                  width={32}
+                  height={32}
                   className="w-8 h-8 mr-2 rounded-full"
+                  priority
                 />
                 <span className={`text-xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent ${
                   scrolled ? '' : 'text-white'
