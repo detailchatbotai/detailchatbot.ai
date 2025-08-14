@@ -2,6 +2,9 @@ import { supabase } from './supabase'
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'
 
+// Debug: log the API URL being used
+console.log('API_BASE_URL:', API_BASE_URL)
+
 // Get auth token from Supabase
 async function getAuthToken(): Promise<string> {
   const { data: { session } } = await supabase.auth.getSession()
