@@ -21,7 +21,10 @@ async function apiRequest<T>(
 ): Promise<T> {
   const token = await getAuthToken()
   
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+  const fullUrl = `${API_BASE_URL}${endpoint}`
+  console.log('Making API request to:', fullUrl)
+  
+  const response = await fetch(fullUrl, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
