@@ -1,6 +1,12 @@
 import { supabase } from './supabase'
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'
+let API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000'
+
+// Force HTTPS for production Railway URL
+if (API_BASE_URL.includes('detailchatbotai-production.up.railway.app') && API_BASE_URL.startsWith('http:')) {
+  API_BASE_URL = API_BASE_URL.replace('http:', 'https:')
+  console.log('Fixed HTTP to HTTPS for Railway URL')
+}
 
 // Debug: log the API URL being used
 console.log('API_BASE_URL:', API_BASE_URL)
