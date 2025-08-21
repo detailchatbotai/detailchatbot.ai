@@ -40,15 +40,6 @@ async function apiRequest<T>(
   })
 
   if (!response.ok) {
-    // Handle authentication errors immediately
-    if (response.status === 401) {
-      await supabase.auth.signOut()
-      if (typeof window !== 'undefined') {
-        window.location.href = '/auth/login'
-      }
-      throw new Error('Session expired')
-    }
-
     const errorData = await response.json().catch(() => ({}))
     const errorMessage = errorData.detail || `HTTP ${response.status}: ${response.statusText}`
     
