@@ -16,24 +16,48 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handleEmailConfirmation = async () => {
       try {
-        // Handle the auth callback
-        const { data, error } = await supabase.auth.getSession()
+        // Check if there's a code parameter (PKCE flow)
+        const urlParams = new URLSearchParams(window.location.search)
+        const code = urlParams.get('code')
         
-        if (error) {
-          setError(error.message)
-          setLoading(false)
-          return
-        }
+        if (code) {
+          // Exchange code for session
+          const { data, error } = await supabase.auth.exchangeCodeForSession(window.location.search)
+          
+          if (error) {
+            setError(error.message)
+            setLoading(false)
+            return
+          }
 
-        // Check if user is now confirmed
-        if (data.session?.user) {
-          setSuccess(true)
-          // Redirect to dashboard after a short delay
-          setTimeout(() => {
-            router.push('/dashboard')
-          }, 2000)
+          if (data.session?.user) {
+            setSuccess(true)
+            // Clean the URL
+            window.history.replaceState({}, document.title, window.location.pathname)
+            setTimeout(() => {
+              router.push('/dashboard')
+            }, 2000)
+          } else {
+            setError('Email confirmation failed')
+          }
         } else {
-          setError('Email confirmation failed')
+          // Fallback: check existing session
+          const { data, error } = await supabase.auth.getSession()
+          
+          if (error) {
+            setError(error.message)
+            setLoading(false)
+            return
+          }
+
+          if (data.session?.user) {
+            setSuccess(true)
+            setTimeout(() => {
+              router.push('/dashboard')
+            }, 2000)
+          } else {
+            setError('No valid session found')
+          }
         }
       } catch (err) {
         setError('An unexpected error occurred')
