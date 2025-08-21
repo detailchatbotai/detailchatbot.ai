@@ -16,6 +16,7 @@ from app.services.chat_config import (
     create_chat_config,
     update_chat_config
 )
+from app.models.chat_config import ChatWidgetConfig
 from app.core.supabase_auth import get_current_user
 from app.core.subscription_auth import require_active_subscription
 from app.db import get_db
@@ -103,8 +104,7 @@ async def get_widget_config(
     subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
-    from app.models.chat_config import ChatWidgetConfig
-    
+
     shop = get_shop_by_owner(db, user["id"])
     if not shop:
         raise HTTPException(
@@ -129,7 +129,6 @@ async def create_widget_config(
     subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
-    from app.models.chat_config import ChatWidgetConfig
     
     shop = get_shop_by_owner(db, user["id"])
     if not shop:
@@ -162,7 +161,6 @@ async def update_widget_config(
     subscription = Depends(require_active_subscription),
     db: Session = Depends(get_db)
 ):
-    from app.models.chat_config import ChatWidgetConfig
     
     shop = get_shop_by_owner(db, user["id"])
     if not shop:

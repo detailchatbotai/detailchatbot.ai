@@ -13,9 +13,13 @@ console.log('API_BASE_URL:', API_BASE_URL)
 
 // Get auth token from Supabase
 async function getAuthToken(): Promise<string> {
-  const { data: { session } } = await supabase.auth.getSession()
-  if (!session?.access_token) {
-    throw new Error('No authentication token found')
+  const { data: { session }, error } = await supabase.auth.getSession()
+  if (error || !session?.access_token) {
+    await supabase.auth.signOut()
+    if (typeof window !== 'undefined') {
+      window.location.href = '/auth/login'
+    }
+    throw new Error('Authentication required')
   }
   return session.access_token
 }
@@ -40,6 +44,15 @@ async function apiRequest<T>(
   })
 
   if (!response.ok) {
+    // Handle authentication errors immediately
+    if (response.status === 401) {
+      await supabase.auth.signOut()
+      if (typeof window !== 'undefined') {
+        window.location.href = '/auth/login'
+      }
+      throw new Error('Session expired')
+    }
+
     const errorData = await response.json().catch(() => ({}))
     const errorMessage = errorData.detail || `HTTP ${response.status}: ${response.statusText}`
     
